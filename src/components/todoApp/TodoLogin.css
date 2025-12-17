@@ -1,0 +1,165 @@
+/* --- MAIN WRAPPER --- */
+.login-main-box{
+
+  min-height: 100vh;
+  width: 100%;
+  /* background: #f3f4f6; */
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(
+    1200px 600px at 10% 10%,
+    #280026 50%,
+    #240023 100%
+  );
+}
+
+.login-hole-container{
+    display: flex;
+      justify-content: center;
+  align-items: center;
+  
+}
+
+
+.login-box {
+  display: flex;
+  width: 900px; 
+  height: 550px; 
+  /* background: white; */
+    background: rgba(244, 244, 244, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.login-form-image {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.visual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.form-panel {
+  width: 50%;
+  height: 100%; 
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+/* Form inputs */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.18);
+}
+
+/* Right-aligned forgot password */
+.label-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  color: #1a73e8;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Submit button */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #1a73e8;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  opacity: 0.95;
+}
+
+/* Bottom link */
+.footer-cta {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+}
+
+.link-inline {
+  margin-left: 6px;
+}
+
+/* Corner note */
+.corner-note {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* --- RESPONSIVE (For Tablets & Phones) --- */
+@media (max-width: 900px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
+
+  .login-form-image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .form-panel {
+    width: 100%;
+    padding: 40px 30px;
+  }
+}

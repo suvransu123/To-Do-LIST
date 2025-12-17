@@ -1,0 +1,36 @@
+{
+  "user": [
+    {
+      "id": "4f15",
+      "firstname": "Prabir",
+      "lastname": "nayak",
+      "gmail": "prabir469@gmail.com",
+      "password": "Prabir@123",
+      "conform_password": "Prabir@123"
+    },
+    {
+      "id": "4674",
+      "firstname": "Bikash",
+      "lastname": "nayak",
+      "gmail": "bikash123@gmail.com",
+      "password": "Bikash@123",
+      "conform_password": "Bikash@123"
+    }
+  ],
+  "appointments": [
+    {
+      "title": "suvransu",
+      "description": "my name is svvransu",
+      "date": "Saturday 03 Jan 2026",
+      "gmail": "bikash123@gmail.com",
+      "id": "6245"
+    },
+    {
+      "id": "11cc",
+      "title": "su",
+      "description": "abc",
+      "date": "Wednesday 17 Dec 2025",
+      "gmail": "bikash123@gmail.com"
+    }
+  ]
+}

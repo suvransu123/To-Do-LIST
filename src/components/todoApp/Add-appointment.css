@@ -1,0 +1,71 @@
+/* Container */
+.add-container {
+  background: #1e293b;
+    /* background: #121d38; */
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+  width: 450px;
+  margin-top: 20px;
+}
+
+/* Title */
+.add-title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #f1f5f9;
+}
+
+/* Form Styling */
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Text + Inputs */
+.add-form label {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.add-form input,
+.add-form textarea {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: white;
+  padding: 13px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.add-form input:focus,
+.add-form textarea:focus {
+  border-color: #04b395c4;
+}
+.add-form textarea::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Edge */
+}
+
+.add-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 10px;
+ background: #026c72;
+color: white;
+}
+.add-btn:hover {
+  background: #086582 !important;
+}
+.cancel-btn {
+  background-color: #6f1b11; /* Red for Cancel */
+}
+
+.cancel-btn:hover {
+  background-color: #582719 !important;
+}
+
