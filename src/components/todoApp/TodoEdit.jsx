@@ -6,70 +6,98 @@ import { useNavigate, useParams } from "react-router-dom";
 import moment from "moment";
 import "./Add-appointment.css";
 
-export default function AppointmentForm() {
-  const { id } = useParams();
+export default function AddAppointment() {
+  const { id } = useParams(); // appointment ID for edit
   const [cookies] = useCookies(["usergmail"]);
   const navigate = useNavigate();
+
+  // Doctor list with fees
+  const doctors = [
+    { name: "Dr. Rajesh Kumar (Cardiologist)", fee: 800 },
+    { name: "Dr. Ananya Sharma (Dermatologist)", fee: 600 },
+    { name: "Dr. Vikram Singh (Orthopedic)", fee: 700 },
+    { name: "Dr. Neha Verma (Pediatrician)", fee: 500 },
+    { name: "Dr. Arjun Patel (Neurologist)", fee: 1000 },
+  ];
 
   const formik = useFormik({
     initialValues: {
       title: "",
       description: "",
       date: "",
+      doctor: "",
+      amount: "",
       gmail: cookies["usergmail"],
     },
 
     onSubmit: async (values) => {
-      // Convert date → "Wednesday 24 Dec 2025"
-      const formattedDate = moment(values.date, "YYYY-MM-DD").format(
-        "dddd DD MMM YYYY"
-      );
+      const formattedDate = moment(values.date).format("dddd DD MMM YYYY");
+      const finalData = { ...values, date: formattedDate };
 
-      const finalData = {
-        ...values,
-        date: formattedDate,
-      };
+      try {
+        if (id) {
+          // Edit appointment
+          await axios.put(`http://localhost:3000/appointments/${id}`, finalData);
+          alert("Appointment Updated Successfully!");
+        } else {
+          // Add new appointment
+          await axios.post("http://localhost:3000/appointments", finalData);
+          alert("Appointment Added Successfully!");
+        }
 
-      if (id) {
-        await axios.put(`http://localhost:3000/appointments/${id}`, finalData);
-        alert("Appointment Updated Successfully!");
-      } else {
-        await axios.post("http://localhost:3000/appointments", finalData);
-        alert("Appointment Added Successfully!");
+        navigate("/TodoDashboard", { state: { reload: true } });
+      } catch (err) {
+        console.error(err);
+        alert("Something went wrong!");
       }
-
-      navigate("/TodoDashboard", { state: { reload: true } });
     },
   });
 
-  // Load data in EDIT MODE
+  // ---------------- HANDLE DOCTOR CHANGE ---------------- //
+  const handleDoctorChange = (e) => {
+    const selectedDoctor = e.target.value;
+    formik.setFieldValue("doctor", selectedDoctor);
+
+    const doctorObj = doctors.find((d) => d.name === selectedDoctor);
+    if (doctorObj) {
+      formik.setFieldValue("amount", doctorObj.fee);
+    }
+  };
+
+  // ---------------- LOAD APPOINTMENT DATA FOR EDIT ---------------- //
   useEffect(() => {
     if (id) {
       axios.get(`http://localhost:3000/appointments/${id}`).then((res) => {
-        const storedDate = res.data.date;
+        // Ensure the appointment belongs to the current user
+        if (res.data.gmail !== cookies.usergmail) {
+          alert("You are not authorized to edit this appointment!");
+          navigate("/TodoDashboard");
+          return;
+        }
 
-        // Convert stored date to normal input format
-        const correctDate = moment(
-          storedDate,
-          ["dddd DD MMM YYYY", "YYYY-MM-DD"]
-        ).format("YYYY-MM-DD");
+        // Convert stored date to input type="date" format
+        const correctDate = moment(res.data.date, ["dddd DD MMM YYYY", "YYYY-MM-DD"]).format(
+          "YYYY-MM-DD"
+        );
 
+        // Pre-fill form with appointment data
         formik.setValues({
           title: res.data.title,
           description: res.data.description,
           date: correctDate,
+          doctor: res.data.doctor,
+          amount: res.data.amount,
           gmail: res.data.gmail,
         });
       });
     }
-  }, [id]);
+  }, [id, cookies.usergmail]);
 
   return (
     <div className="add-container">
       <h2 className="add-title">{id ? "Edit Appointment" : "Add New Appointment"}</h2>
 
       <form onSubmit={formik.handleSubmit} className="add-form">
-
         <label>Title</label>
         <input
           type="text"
@@ -82,11 +110,40 @@ export default function AppointmentForm() {
         <label>Description</label>
         <textarea
           name="description"
-          rows="8"
+          rows="2"
           value={formik.values.description}
           onChange={formik.handleChange}
           required
         ></textarea>
+
+        <label>Select Doctor</label>
+        <select
+          name="doctor"
+          value={formik.values.doctor}
+          onChange={handleDoctorChange}
+          required
+        >
+          <option value="">-- Select Doctor --</option>
+          {doctors.map((doc, index) => (
+            <option key={index} value={doc.name}>
+              {doc.name}
+            </option>
+          ))}
+        </select>
+
+        {formik.values.doctor && (
+          <p className="selected-doctor">
+            Selected Doctor: <strong>{formik.values.doctor}</strong>
+          </p>
+        )}
+
+        <label>Consultation Fee (₹)</label>
+        <input
+          type="number"
+          name="amount"
+          value={formik.values.amount}
+          disabled
+        />
 
         <label>Date</label>
         <input
@@ -99,7 +156,7 @@ export default function AppointmentForm() {
 
         <div className="d-flex">
           <button type="submit" className="add-btn">
-            {id ? "Update" : "Add Appointment"}
+            {id ? "Update Appointment" : "Add Appointment"}
           </button>
 
           <button

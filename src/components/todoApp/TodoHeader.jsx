@@ -69,7 +69,7 @@ const TodoHeader = () => {
                     <circle cx="155" cy="170" r="10" fill="#4CAF50" />
                   </svg>
                 </div>
-                <p className="fs-3  todo-brand ps-2">TO DO LIST</p>
+                <p className="fs-3  todo-brand ps-2">Appointmets list</p>
               </div>
             </header>
     </div>

@@ -34,7 +34,7 @@
   background: #0f172a;
   border: 1px solid #334155;
   color: white;
-  padding: 13px;
+  padding: 10px;
   border-radius: 6px;
   outline: none;
   font-size: 14px;
@@ -68,4 +68,70 @@ color: white;
 .cancel-btn:hover {
   background-color: #582719 !important;
 }
+/* Select dropdown styling */
+.add-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #1e293b;   /* dark background */
+  color: #ffffff;              /* text color */
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Dropdown options */
+.add-form select option {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+/* Focus effect */
+.add-form select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
+
+/* Placeholder option */
+.add-form select option[value=""] {
+  color: #9ca3af;
+}
+
+
+.add-form label {
+  font-weight: 500;
+  margin-top: 10px;
+  display: block;
+}
+
+.add-form input,
+.add-form textarea,
+.add-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  margin-top: 15px;
+  padding: 7px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn.cancel-btn {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+}
+
 

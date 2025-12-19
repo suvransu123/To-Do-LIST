@@ -5,17 +5,18 @@
   color: white;
 }
 
-
-/* LEFT SIDEBAR */
+/* ================= LEFT SIDEBAR ================= */
 .sidebar {
-  width:300px;
+  width: 300px;
   background: #1e293b;
-  height: 100vh;
+  height:108vh;
   border-right: 1px solid #334155;
 }
-.content-area{
+
+.content-area {
   width: 70%;
 }
+
 .sidebar-menu li {
   list-style: none;
   padding: 12px 8px;
@@ -24,18 +25,19 @@
   cursor: pointer;
 }
 
-.sidebar-menu li:hover, .sidebar-menu .active {
+.sidebar-menu li:hover,
+.sidebar-menu .active {
   background: #0ea5e9;
   color: white;
 }
 
-/* SEARCH BAR */
+/* ================= SEARCH BAR ================= */
 .search-box {
   width: 350px;
   background: #1e293b;
   border: none;
   color: white;
-  padding: 12px 0px 12px 20px ;
+  padding: 12px 0px 12px 20px;
   border-radius: 10px;
   margin-left: 20px;
   outline: none;
@@ -43,156 +45,173 @@
 
 .search-box::placeholder {
   color: #94a3b8;
-  /* padding-left: 10px; */
 }
-.appointment-form {
-                /* Use Flexbox */
-   /* Push text left, + right */
-  align-items: center;         /* Vertically center the items */
-  width: 250px;                /* Set your desired width */
-  height: 50px;                /* Set your desired height */
-  padding: 10px 15px;             /* Optional padding inside */
-     /* Example background */ 
-     background: #0b588f49;
 
-  border-radius: 8px;          /* Rounded corners */
-  text-decoration: none;       /* Remove link underline */
-  color: #fffafa;                 /* Text color */
-  font-weight: 500;            /* Slightly bolder text */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow */
+/* ================= ADD APPOINTMENT BUTTON ================= */
+.appointment-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  height: 50px;
+  padding: 10px 15px;
+  background: #0b588f49;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fffafa;
+  font-weight: 500;
 }
 
 .plus-icon {
-  font-size: 20px;             /* Adjust size of + */
+  font-size: 20px;
   font-weight: bold;
 }
 
-
-/* PROFILE BUTTON */
+/* ================= PROFILE ================= */
 .profile-btn {
   cursor: pointer;
 }
 
 .profile-name {
   font-size: 18px;
-  font-family: 800;
-  color: rgb(255, 255, 255);
+  font-weight: 800;
+  color: white;
 }
 
-
-/* MIDDLE CONTENT BOX */
-/* 2-column layout */
+/* ================= DASHBOARD LAYOUT ================= */
 .dashboard-content-row {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
 
-/* LEFT appointment list */
 .left-appointments {
   width: 60%;
-  /* background: #1e293b; */
   padding: 20px;
-  border-radius: 10px;
   color: white;
 }
+
 .right-form {
   margin-top: 40px;
 }
 
-
-/* Title inside each box */
 .box-title {
   font-size: 20px;
   margin-bottom: 15px;
   color: #f1f5f9;
 }
 
-/* Appointment item */
+/* ================= APPOINTMENT CARD ================= */
 .appoint-item {
-  /* background: #121d38; */
   background: #1e293b;
-  padding: 15px 12px;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
   color: #cbd5e1;
-  box-shadow: 0px 0px 10px rgba(7, 2, 37,0.5),
-  -1px -2px 20px rgb(5, 11, 42,0.5);
+  box-shadow: 0px 0px 10px rgba(7, 2, 37, 0.5);
 }
-.result-title{
-  display: block;
-  font-size: 22px;
-  font-weight: 700;
-  padding-bottom: 4px;
-  text-shadow:0px 0px 1px #f0f4f5;
-}
-.appointment-description{
-  height: 80px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-.appointment-description::-webkit-scrollbar {
-  display: none;              /* Chrome, Safari, Edge */
-}
-.left-side-result-box{
-  width: 70%;
-}
-.right-side-result-box{
+
+.appoint-item > div {
   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+  justify-content: space-between;
+  gap: 15px;
 }
-.bi-trash-fill{
-  color: rgb(231, 226, 224);
+
+.left-side-result-box {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.result-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.appointment-description {
+  max-height: 70px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.appointment-description::-webkit-scrollbar {
+  display: none;
+}
+
+.doctor-name {
+  font-size: 14px;
+  color: #93c5fd;
+}
+
+/* ================= RIGHT SIDE ================= */
+.right-side-result-box {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.right-side-result-box p {
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+/* ================= ICONS ================= */
+.bi-trash-fill {
+  color: #e7e2e0;
   font-size: 17px;
+}
 
- 
-}
-.bi-pen-fill{
-  color: rgba(246, 246, 242, 0.76);
-   font-size: 17px;
-}
-.bi-pen-fill:hover{
-  color: rgba(245, 209, 2, 0.783);
- 
-}
-.bi-trash-fill:hover{
+.bi-trash-fill:hover {
   color: rgb(201, 5, 38);
- 
-}
-.bi-eye-fill{
- color: rgba(246, 246, 242, 0.76);
-   font-size: 20px;
-   padding-left: 20px;
-}
-.bi-eye-fill:hover{
- color: rgba(48, 178, 8, 0.76);
- 
-}
-/* Entire offcanvas background */
-.offcanvas-custom {
-  background-color: #1e293b !important;   /* Dark blue */
-  color: white !important;                 /* Text color */
 }
 
-/* Header */
+.bi-pen-fill {
+  color: rgba(246, 246, 242, 0.76);
+  font-size: 17px;
+}
+
+.bi-pen-fill:hover {
+  color: rgba(245, 209, 2, 0.783);
+}
+
+.bi-eye-fill {
+  color: rgba(246, 246, 242, 0.76);
+  font-size: 20px;
+  margin-left: 12px;
+}
+
+.bi-eye-fill:hover {
+  color: rgba(48, 178, 8, 0.76);
+}
+
+/* ================= OFFCANVAS PROFILE (FIXED) ================= */
+.offcanvas-custom {
+  background-color: #1e293b !important;
+  color: white !important;
+}
+
 .offcanvas-custom .offcanvas-header {
   background-color: #0f172a !important;
-  color: white !important;
   border-bottom: 1px solid #334155;
 }
 
-/* Title */
 .offcanvas-custom .offcanvas-title {
   color: #f8fafc !important;
 }
 
-/* Close button */
 .offcanvas-custom .btn-close {
-  filter: invert(1);   /* Makes close button white */
+  filter: invert(1);
 }
 
-/* List items */
+.offcanvas-custom .offcanvas-body {
+  background-color: #1e293b !important;
+}
+
 .offcanvas-custom .list-group-item {
   background-color: #1e293b;
   color: #cbd5e1;
@@ -200,23 +219,23 @@
 }
 
 .offcanvas-custom .list-group-item:hover {
-  background-color: #0ea5e9; /* hover color */
+  background-color: #0ea5e9;
   color: white;
 }
-.modal-content{
- background: #25354f;
+
+/* ================= MODAL ================= */
+.modal-content {
+  background: #25354f;
 }
-.modal-title{
- 
+
+.modal-title {
   color: white !important;
 }
-.modal-body{
+
+.modal-body {
   color: #f0f4f5;
 }
-.btn-close{
-  
+
+.btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
-
 }
-
-

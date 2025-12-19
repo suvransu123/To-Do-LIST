@@ -71,14 +71,23 @@ export default function TodoLogin() {
         <div className="login-box">
 
           <section className="login-form-image" aria-hidden="true">
-            <div className="visual-gradient">
-              <img
-                className="visual-image"
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
-                alt=""
-              />
-            </div>
-          </section>
+  <div className="visual-gradient">
+    <img
+      className="visual-image"
+      src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
+      alt=""
+    />
+
+    {/* Overlay Content */}
+    <div className="image-overlay">
+      <h2>Welcome Back</h2>
+      <p>
+        Manage your tasks, track your progress, and stay productive every day.
+      </p>
+    </div>
+  </div>
+</section>
+
 
           <main className="form-panel">
             <div className="form-intro">

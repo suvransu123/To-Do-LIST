@@ -19,17 +19,12 @@
   ],
   "appointments": [
     {
-      "title": "suvransu",
-      "description": "my name is svvransu",
-      "date": "Saturday 03 Jan 2026",
-      "gmail": "bikash123@gmail.com",
-      "id": "6245"
-    },
-    {
-      "id": "11cc",
-      "title": "su",
-      "description": "abc",
-      "date": "Wednesday 17 Dec 2025",
+      "id": "8ce8",
+      "title": "head pain",
+      "description": "pain my head every day ",
+      "date": "Tuesday 16 Dec 2025",
+      "doctor": "Dr. Rajesh Kumar (Cardiologist)",
+      "amount": 800,
       "gmail": "bikash123@gmail.com"
     }
   ]

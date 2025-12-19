@@ -1,0 +1,86 @@
+/* ===== PANEL CONTAINER ===== */
+.panel-container {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+/* ===== INFO CARD ===== */
+.info-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== HEADINGS ===== */
+.info-card h2 {
+  color: #2c097f;
+  margin-bottom: 10px;
+}
+
+.info-card h4 {
+  margin-top: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* ===== TEXT ===== */
+.info-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.info-card p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== LIST ===== */
+.info-list {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.info-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* ===== BUTTON ===== */
+.add-btn {
+  background-color: #2c097f;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.add-btn:hover {
+  background-color: #220edd;
+}
+
+/* ===== HR LINE ===== */
+.info-card hr {
+  margin: 18px 0;
+  border: none;
+  height: 1px;
+  background: #eee;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

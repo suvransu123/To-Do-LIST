@@ -78,23 +78,28 @@ background-image: url('/image/todo-background2.jpg');
   text-decoration: none;
 }
 
-.home-create-btn{
-  background: #2c097f;
+.home-create-btn {
+  background-color: #2c097f;
   color: white;
+  border: none;
 }
 
-.btn-primary:hover {
-  background: #210661;
+.home-create-btn:hover,
+.home-create-btn:focus,
+.home-create-btn:active {
+  background-color: #220edd;
+  color: white;
 }
 
 .btn-outline {
   border: 2px solid white;
-  color: white;
-  background: transparent;
+  color: rgb(224, 233, 233);
+  background: rgb(0, 97, 126);
+  font-weight: 700;
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(9, 155, 51, 0.8);
 }
 
 /* FEATURES SECTION (NO IMAGE HERE) */
